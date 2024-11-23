@@ -1,5 +1,5 @@
 --create database		ZADACA;
 --use ZADACA
 
-create table smjer(nziv varchar(50)
+create table SMJER(naziv varchar(50)
 );
