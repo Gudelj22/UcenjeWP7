@@ -28,7 +28,7 @@ email varchar(100) not null
 
 create table grupe(
 sifra int not null primary key identity(1,1),
-naziv varchar(20)not null,
+naziv varchar(20) not null,
 smjer int not null references smjerovi(sifra),--ovo je vanjski ključ 
 predavac varchar(50)
 );
