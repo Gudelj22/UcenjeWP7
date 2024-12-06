@@ -9,11 +9,11 @@ use lol;
 create table heroji(
 sifra int not null primary key identity(1,1),
 ime varchar(20) not null ,
-moci varchar(50) not null,
-rune int null,
+moci varchar(50) not null references moci(sifra) ,
+rune int not null references rune(sifra),
 razina int null,
 vrste int null,
-datum izlaska date null,
+datum_izlaska date null,
 );
 
 create table rune(
@@ -27,8 +27,8 @@ create table moci(
 sifra int not null primary key identity,
 ime varchar(20) null,
 vrste int not null,
-prvenstvena_moc int not null references prvenstvena_moc(sifra),
-druda_moc int not null references druga_moc(sifra),
+prvenstvena_moc int not null references ,
+druda_moc int not null 
 );
 
 
