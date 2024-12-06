@@ -8,12 +8,7 @@ use lol;
 
 
 
-create table rune(
-sifra int not null primary key identity (1,1),
-ime varchar(20) not null ,  
-vrste int null,
-moci int not null references moci(sifra),
-);
+
 
 create table moci(
 sifra int not null primary key identity (1,1),
@@ -22,10 +17,17 @@ vrste int not null,
 prvenstvena_moc int not null,
 druda_moc int not null 
 );
-create table heroji(
+create table rune(
+sifra int not null primary key identity (1,1),
+ime varchar(20) not null ,  
+vrste int null,
+moci int not null references moci(sifra),
+);
+
+create table heroji_(
 sifra int not null primary key identity(1,1),
 ime varchar(20) not null ,
-moci varchar(50) not null references moci(sifra) ,
+moci int not null references moci(sifra) ,
 rune int not null references rune(sifra),
 razina int null,
 vrste int null,
