@@ -13,9 +13,8 @@ use lol;
 create table moci(
 sifra int not null primary key identity (1,1),
 ime varchar(20) null,
-vrste int not null,
-prvenstvena_moc int not null,
-druda_moc int not null 
+vrste varchar(6) not null,
+
 );
 create table rune(
 sifra int not null primary key identity (1,1),
@@ -24,16 +23,18 @@ vrste int null,
 moci int not null references moci(sifra),
 );
 
-create table heroji_(
+create table heroji(
 sifra int not null primary key identity(1,1),
 ime varchar(20) not null ,
-moci int not null references moci(sifra) ,
 rune int not null references rune(sifra),
 razina int null,
-vrste int null,
-datum_izlaska date null,);
+vrsta int null,
+datum_izlaska date null,
+primarna_moc int not null references moci(sifra),
+sekundarna_moc int  null references moci(sifra) 
+);
 
-INSERT INTO heroji (ime, datum_izlaska) VALUES
+INSERT INTO heroji(ime, datum_izlaska) VALUES
 ('Aatrox', '2013-06-13'),
 ('Ahri', '2011-12-14'),
 ('Akali', '2010-05-11'),
@@ -196,14 +197,15 @@ INSERT INTO heroji (ime, datum_izlaska) VALUES
 ('Zoe', '2017-11-21'),
 ('Zyra', '2012-07-24');
 
-
-insert into rune(vrste) values
-('ap',1),
-('ad',2),
-('supp',3),
-('tank',4);
-
 insert into moci(vrste) values
 ('izblizine'),
 ('izdaljine'),
 ('izsredine');
+
+insert into rune(vrste, moci, ime) values
+('ap',1),
+('ad',1),
+('supp',2),
+('tank',3);
+
+
