@@ -6,15 +6,7 @@ create database lol ;
 go 
 use lol;
 
-create table heroji(
-sifra int not null primary key identity(1,1),
-ime varchar(20) not null ,
-moci varchar(50) not null references moci(sifra) ,
-rune int not null references rune(sifra),
-razina int null,
-vrste int null,
-datum_izlaska date null,
-);
+
 
 create table rune(
 sifra int not null primary key identity (1,1),
@@ -30,7 +22,14 @@ vrste int not null,
 prvenstvena_moc int not null,
 druda_moc int not null 
 );
-
+create table heroji(
+sifra int not null primary key identity(1,1),
+ime varchar(20) not null ,
+moci varchar(50) not null references moci(sifra) ,
+rune int not null references rune(sifra),
+razina int null,
+vrste int null,
+datum_izlaska date null,);
 
 INSERT INTO heroji (ime, datum_izlaska) VALUES
 ('Aatrox', '2013-06-13'),
@@ -202,7 +201,7 @@ insert into rune(vrste) values
 ('supp',3),
 ('tank',4);
 
-insert into moci(vrste)
+insert into moci(vrste) values
 ('izblizine'),
 ('izdaljine'),
 ('izsredine');
