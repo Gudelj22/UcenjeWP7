@@ -17,17 +17,17 @@ datum_izlaska date null,
 );
 
 create table rune(
-sifra int not null primary key identity,
+sifra int not null primary key identity (1,1),
 ime varchar(20) not null ,  
 vrste int null,
 moci int not null references moci(sifra),
 );
 
 create table moci(
-sifra int not null primary key identity,
+sifra int not null primary key identity (1,1),
 ime varchar(20) null,
 vrste int not null,
-prvenstvena_moc int not null references ,
+prvenstvena_moc int not null,
 druda_moc int not null 
 );
 
