@@ -1,25 +1,22 @@
 use master;
 go
-drop database  if exists lol;
+drop database  if exists lol ;
 go
-create database lol ;
+create database lol collate Croatian_CI_AS;
 go 
 use lol;
-
-
-
-
 
 create table moci(
 sifra int not null primary key identity (1,1),
 ime varchar(20) null,
 vrste varchar(6) not null,
 
+
 );
 create table rune(
 sifra int not null primary key identity (1,1),
 ime varchar(20) not null ,  
-vrste int null,
+vrste int not null,
 moci int not null references moci(sifra),
 );
 
@@ -29,9 +26,9 @@ ime varchar(20) not null ,
 rune int not null references rune(sifra),
 razina int null,
 vrsta int null,
-datum_izlaska date null,
+datum_izlaska date not null,
 primarna_moc int not null references moci(sifra),
-sekundarna_moc int  null references moci(sifra) 
+sekundarna_moc int not null references moci(sifra) 
 );
 
 insert into moci(vrste) values
@@ -39,7 +36,7 @@ insert into moci(vrste) values
 ('izdaljine'),
 ('izsredine');
 
-insert into rune(vrste, moci, ime) values
+insert into rune(vrste) values
 ('ap',1),
 ('ad',1),
 ('supp',2),
@@ -51,6 +48,4 @@ INSERT INTO heroji(ime, datum_izlaska) VALUES
 ('Akshan', '2021-07-21'),
 ('Alistar', '2009-02-21'),
 ('Amumu', '2009-06-26'),
-('Anivia', '2009-07-10'),
-
-
+('Anivia', '2009-07-10');
