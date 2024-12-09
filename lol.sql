@@ -8,50 +8,48 @@ use lol;
 
 create table moci(
 sifra int not null primary key identity (1,1),
-ime varchar(20) null,
-vrste varchar(6) not null,
-
-
+ime varchar(20) not null,
+vrste varchar(20) not null
 );
 create table rune(
 sifra int not null primary key identity (1,1),
 ime varchar(20)  null ,  
-vrste int  not null,
-moci int  null references moci(sifra),
-moci int not null references moci(sifra),
+vrste varchar(50)  not null,
+moc int not null references moci(sifra)
 );
 
 create table heroji(
 sifra int not null primary key identity(1,1),
 ime varchar(20) not null ,
-rune int  null references rune(sifra),
+runa int  null references rune(sifra),
 razina int null,
-vrsta int null,
+vrsta varchar(50) null,
 datum_izlaska date not null,
-primarna_moc int  null references moci(sifra),
+primarna_moc int not null references moci(sifra),
 sekundarna_moc int  null references moci(sifra) 
 );
 
-insert into moci(vrste) values
+insert into moci(ime,vrste) values
 ('izblizine'),
 ('izdaljine'),
 ('izsredine');
 
 
-insert into rune(vrste) values
-('ap',1),
-('ad',1),
-('supp',2),
-('tank',3);
-INSERT INTO heroji(ime, datum_izlaska) VALUES
-('Aatrox', '2013-06-13'),
-('Ahri', '2011-12-14'),
-('Akali', '2010-05-11'),
-('Akshan', '2021-07-21'),
-('Alistar', '2009-02-21'),
-('Amumu', '2009-06-26'),
-('Anivia', '2009-07-10'),
-('Annie', '2009-02-21');
+insert into rune(vrste, moc) values
+('ap','sorcery',1),
+('ad',precision_',2),
+('supp','domination',3),
+('tank','resolve',4);
+
+INSERT INTO heroji(ime, datum_izlaska,primarna_moc ) VALUES
+('Aatrox', '2013-06-13','mocdemonskogmaca'),
+('Ahri', '2011-12-14','ljubavnakugla'),
+('Akali', '2010-05-11','ostrice'),
+('Akshan','2021-07-21','automatskostreljivo'),
+('Alistar', '2009-02-21','snagaruku'),
+('Amumu', '2009-06-26','mocfaraona'),
+('Anivia', '2009-07-10','ledenakugla'),
+('Annie', '2009-02-21','vatrenakugla');
 
 
 
