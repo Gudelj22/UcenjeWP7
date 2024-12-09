@@ -15,7 +15,7 @@ vrste varchar(6) not null,
 );
 create table rune(
 sifra int not null primary key identity (1,1),
-ime varchar(20) not null ,  
+ime varchar(20)  null ,  
 vrste int not null,
 moci int not null references moci(sifra),
 );
@@ -37,15 +37,16 @@ insert into moci(vrste) values
 ('izsredine');
 
 insert into rune(vrste) values
-('ap',1),
-('ad',1),
-('supp',2),
-('tank',3);
+('ap'),
+('ad'),
+('supp'),
+('tank');
+
 INSERT INTO heroji(ime, datum_izlaska) VALUES
-('Aatrox', '2013-06-13'),
-('Ahri', '2011-12-14'),
-('Akali', '2010-05-11'),
-('Akshan', '2021-07-21'),
-('Alistar', '2009-02-21'),
+('Aatrox', '2013-06-13',4),
+('Ahri', '2011-12-14',5),
+('Akali', '2010-05-11',6),
+('Akshan', '2021-07-21',7),
+('Alistar', '2009-02-21',8),
 ('Amumu', '2009-06-26'),
-('Anivia', '2009-07-10');
+('Anivia', '2009-07-10',9);
