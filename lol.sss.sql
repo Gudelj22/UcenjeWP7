@@ -9,7 +9,7 @@ use lol;
 create table moci(
 sifra int not null primary key identity (1,1),
 ime varchar(20) not null,
-vrsta varchar not null 
+vrste int not null 
 );
 create table rune(
 sifra int not null primary key identity (1,1),
@@ -27,13 +27,13 @@ primarna_moc int not null references moci(sifra),
 sekundarna_moc int  null references moci(sifra) 
 );
 
-insert into moci(ime) values
-('izblizine',1),
-('izdaljine',2),
-('izsredine',3);
+insert into moci(ime, vrste) values
+('blizina','izblizine',1),
+('daljina','izdaljine',2),
+('sredina','izsredine',3);
 
 
-insert into rune(ime,moc) values
+insert into rune(ime, vrste) values
 ('sorcery','ap',1),
 ('precision_','ad',2),
 ('domination','supp',3),
@@ -48,7 +48,3 @@ INSERT INTO heroji(ime, datum_izlaska,primarna_moc ) VALUES
 ('Amumu', '2009-06-26','mocfaraona'),
 ('Anivia', '2009-07-10','ledenakugla'),
 ('Annie', '2009-02-21','vatrenakugla');
-
-
-
-
