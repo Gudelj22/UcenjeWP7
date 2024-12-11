@@ -9,7 +9,7 @@ use lol;
 create table moci(
 sifra int not null primary key identity (1,1),
 ime varchar(20) not null,
-moc int null 
+vrsta varchar not null 
 );
 create table rune(
 sifra int not null primary key identity (1,1),
