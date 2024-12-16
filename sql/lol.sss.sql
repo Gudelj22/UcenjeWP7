@@ -40,10 +40,10 @@ insert into rune(ime, moc) values
 ('resolve','tank',4);
 
 INSERT INTO heroji(ime, datum_izlaska,primarna_moc ) VALUES
-('Aatrox', '2013-06-13','mocdemonskogmaca'),
-('Ahri', '2011-12-14','ljubavnakugla'),
-('Akali', '2010-05-11','ostrice'),
-('Akshan','2021-07-21','automatskostreljivo'),
+('Aatrox', '2013-06-13','mocdemonskogmaca',1,3),
+('Ahri', '2011-12-14','ljubavnakugla',3,1),
+('Akali', '2010-05-11','ostrice',1,1),
+('Akshan','2021-07-21','automatskostreljivo',),
 ('Alistar', '2009-02-21','snagaruku'),
 ('Amumu', '2009-06-26','mocfaraona'),
 ('Anivia', '2009-07-10','ledenakugla'),
