@@ -1,2 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+
+using Ucenje;
+E02Varijable.izvedi();  
+//E01ULAZIZLAZ.Izvedi();
+
+//Console.WriteLine("Hello, World!");
