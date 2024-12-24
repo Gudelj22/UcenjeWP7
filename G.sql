@@ -1,17 +1,17 @@
 use master;
 go
-drop database if exists G_hemp;
+drop database if exists G;
 go
-create database G_hemp collate Croatian_CI_AS;
+create database G collate Croatian_CI_AS;
 go
-use G_hemp;
+use G;
 
 create table kupci(
 sifra int not null primary key identity (1,1),
 ime varchar(50) not null,
 prezime varchar(50) not null,
-oib char(11) null,
-datum_rodenja datetime not null
+datum_rodenja datetime not null,
+oib char(11) null
 );
 
 create table robe(
@@ -20,7 +20,7 @@ ime varchar(50) not null,
 vrsta varchar(50) not null,
 cijena decimal(10,2),
 kolicina int not null,
-brojnarudzba int not null references narudzbe(sifra)
+brojnarudzba int  null 
 
 );
 
@@ -40,7 +40,7 @@ insert into kupci
 
 insert into robe
 (ime,vrsta,cijena,kolicina) values
-('cbd','orangehase','20,59','1',1);
+('oreo','crni','20,59','1',1);
 
 insert into narudzbe
 ( kupac, roba) values
