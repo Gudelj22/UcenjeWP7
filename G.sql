@@ -10,7 +10,7 @@ create table kupci(
 sifra int not null primary key identity (1,1),
 ime varchar(50) not null,
 prezime varchar(50) not null,
-datum_rodenja datetime not null,
+datum_rodenja date not null,
 oib char(11) null
 );
 
@@ -32,10 +32,15 @@ roba int not null references robe(sifra),
 kupac int not null references kupci(sifra)
 );
 
+create table stavke(
+sifra int not null primary key identity (1,1),
+roba int not null references  robe(sifra),
+kupac int not null references kupci(sifra)
+);
 
 
 insert into kupci 
-(ime,prezime,datum_rodenja) values
+(ime, prezime, datum_rodenja) values
 ('petar','gudelj','13-08-2005',1);
 
 insert into robe
@@ -46,3 +51,6 @@ insert into narudzbe
 ( kupac, roba) values
 (1,1);
 
+insert into stavke
+(kupac, roba) values
+(1,1);
