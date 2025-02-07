@@ -20,7 +20,7 @@ ime varchar(50) not null,
 vrsta varchar(50) not null,
 cijena decimal(10,2),
 kolicina int not null,
-brojnarudzba int  null 
+kupac int not null references kupci(sifra)
 
 );
 
@@ -34,8 +34,8 @@ kupac int not null references kupci(sifra)
 
 create table stavke(
 sifra int not null primary key identity (1,1),
-roba int not null references  robe(sifra),
-kupac int not null references kupci(sifra)
+narudzba int not null references  narudzbe(sifra),
+brojnarudzbe int  null
 );
 
 
