@@ -1,10 +1,10 @@
 use master;
 go
-drop database if exists G;
+drop database if exists Gudelj;
 go
-create database G collate Croatian_CI_AS;
+create database Gudelj collate Croatian_CI_AS;
 go
-use G;
+use Gudelj;
 
 create table kupci(
 sifra int not null primary key identity (1,1),
@@ -39,18 +39,3 @@ kupac int not null references kupci(sifra)
 );
 
 
-insert into kupci 
-(ime, prezime, datum_rodenja) values
-('petar','gudelj','13-08-2005',1);
-
-insert into robe
-(ime,vrsta,cijena,kolicina) values
-('oreo','crni','20,59','1',1);
-
-insert into narudzbe
-( kupac, roba) values
-(1,1);
-
-insert into stavke
-(kupac, roba) values
-(1,1);
