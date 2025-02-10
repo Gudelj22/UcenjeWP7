@@ -8,12 +8,17 @@ use lol;
 
 create table moci(
 sifra int not null primary key identity (1,1),
+<<<<<<< HEAD:sql/lol.sss.sql
 ime varchar(20) not null,
 vrste varchar(50) not null 
+=======
+ime varchar(50) not null,
+vrste int not null 
+>>>>>>> a4437ec7757ec6d886ef5155ee899e99aa940f79:lol.sss.sql
 );
 create table rune(
 sifra int not null primary key identity (1,1),
-ime varchar(20) not null ,  
+ime varchar(50) not null ,  
 moc int not null references moci(sifra)
 );
 
@@ -29,13 +34,16 @@ sekundarna_moc int  null references moci(sifra)
 
 insert into moci(ime , vrste) values
 ('blizina','izblizine',1),
-('daljina','izdaljine',2),
-('sredina','izsredine',3);
+('daljina','izdaljine',2);
 
 
+<<<<<<< HEAD:sql/lol.sss.sql
+=======
+
+>>>>>>> a4437ec7757ec6d886ef5155ee899e99aa940f79:lol.sss.sql
 insert into rune(ime, moc) values
 ('sorcery','ap',1),
-('precision_','ad',2),
+('precision','ad',2),
 ('domination','supp',3),
 ('resolve','tank',4);
 
