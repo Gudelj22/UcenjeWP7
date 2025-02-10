@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Ucenje
 {
-    internal class E06Nizovi
+    internal class E14Z2
     {
-       
+        public static void Izvedi()
+        {
+          
+        }
     }
 }

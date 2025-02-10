@@ -41,7 +41,6 @@ namespace Ucenje
             }
 
             broj = 1;
-            int temp = 2;
             if (broj != 1 && temp < 0)
             {
                 Console.WriteLine("hladno je");
@@ -61,7 +60,6 @@ namespace Ucenje
                 int t = 8; 
 
             }
-            Console.WriteLine(t);
 
             string grad = "Osijek";
             if (grad == "Osijek")
@@ -75,7 +73,7 @@ namespace Ucenje
 
                     }
 
-            Console.WriteLine(grad=="Osijek"?);
+
 
 
         }

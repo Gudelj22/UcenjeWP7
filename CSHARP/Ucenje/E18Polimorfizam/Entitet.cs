@@ -4,15 +4,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ucenje
+namespace Ucenje.E18Polimorfizam
 {
-    internal class E12ForEach
+    public class Entitet
     {
-        public static void Izvedi()
-        {
+        public class Entitet { get; set;}
 
-        }
 
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

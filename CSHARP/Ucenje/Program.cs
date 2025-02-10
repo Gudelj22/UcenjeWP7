@@ -3,9 +3,16 @@
 
 
 using Ucenje;
+new Ucenje.E18Polimorfizam.program("drugi konstruktor");
 
-E12ForEach.Izvedi();
-    }
+//E15Rekurzija.Izvedi();
+
+//E14Metode.Izvedi();
+
+//E13Z1.Izvedi();
+//E13trycath.Izvedi();
+
+    
 
 //E11dowhilepetlja.Izvedi();
 
